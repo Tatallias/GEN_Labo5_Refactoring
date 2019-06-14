@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 #include "../src/Customer.h"
 
-TEST(ExampleTest, simple) {
+TEST(CustomerTest, constructor) {
    // Code
    Customer cust("Violette");
 
