@@ -7,7 +7,7 @@
 class Rentals {
 public:
     Rentals();
-    void addRental( const Rental& rental );
+    void addRental(const Rental& rental);
     std::string getRecord();
 private:
     std::vector< Rental > _rentals;

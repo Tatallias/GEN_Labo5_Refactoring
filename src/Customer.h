@@ -11,7 +11,7 @@ public:
     Customer();
     explicit Customer(std::string name );
 
-    void addRental( const Rental& arg );
+    void addRental(const Rental& rental);
     std::string getName() const;
     std::string statement();
 

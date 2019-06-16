@@ -25,10 +25,10 @@ string Customer::statement() {
 Customer::Customer() = default;
 
 Customer::Customer( string  name )
-        : _name(std::move( name )) {}
+        : _name(std::move(name)) {}
 
-void Customer::addRental( const Rental& arg ) {
-    _rentals.addRental(arg);
+void Customer::addRental(const Rental& rental) {
+    _rentals.addRental(rental);
 }
 
 string Customer::getName() const {
