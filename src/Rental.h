@@ -9,6 +9,9 @@ public:
 
     int getDaysRented() const;
     const Movie& getMovie() const;
+    int getRenterPoints() const;
+    double getTotal() const;
+    std::string getTitle() const;
 
 private:
     Movie _movie;

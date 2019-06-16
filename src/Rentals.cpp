@@ -3,8 +3,8 @@
 
 void Rentals::addRental(const Rental &rental) {
     _rentals.push_back(rental);
-    frequentRenterPoints += rental.getMovie().getRenterPoints(rental.getDaysRented());
-    totalAmount += rental.getMovie().getAmountForDays(rental.getDaysRented());
+    frequentRenterPoints += rental.getRenterPoints();
+    totalAmount += rental.getTotal();
 }
 
 std::string Rentals::getRecord() {
@@ -12,8 +12,8 @@ std::string Rentals::getRecord() {
 
     for (const Rental& rental: _rentals) {
         // show figures for this rental
-        result << "\t" << rental.getMovie().getTitle() << "\t"
-               << rental.getMovie().getAmountForDays(rental.getDaysRented()) << "\n";
+        result << "\t" << rental.getTitle() << "\t"
+               << rental.getTotal() << "\n";
     }
 
     result << "Amount owed is " << totalAmount << "\n";
