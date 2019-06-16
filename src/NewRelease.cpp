@@ -14,9 +14,6 @@ double NewRelease::getAmountForDays(int days) {
 }
 
 int NewRelease::getRenterPoints(int days) {
-    if(days > 1) {
-        return 2;
-    }
-    return 1;
+    return 1 + (days > 1);
 }
 
