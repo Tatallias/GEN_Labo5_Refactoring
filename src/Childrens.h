@@ -10,27 +10,12 @@
 class Childrens : public PriceCode {
 private:
     static Childrens *instance;
-    Childrens() {
-
-    }
+    Childrens() = default;
 public :
     Childrens(const Childrens&) = delete;
     Childrens& operator=(const Childrens&) = delete;
-    static Childrens* getChildrensPriceCode() {
-        if(!instance) {
-            instance = new Childrens;
-        }
-        return instance;
-    }
-    double getAmountForDays(int days) {
-        double toReturn = 1.5;
-        if(days > 3) {
-            toReturn += (days - 3) * 1.5;
-        }
-        return toReturn;
-    }
-    int getRenterPoints(int days) {
-        return 1;
-    }
+    static Childrens* getChildrensPriceCode();
+    double getAmountForDays(int days) override;
+    int getRenterPoints(int days) override;
 };
 #endif //LAB5_REFACTORING_CHILDRENS_H

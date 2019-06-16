@@ -6,26 +6,12 @@
 class NewRelease : public PriceCode {
 private:
     static NewRelease *instance;
-    NewRelease() {
-
-    }
+    NewRelease() = default;
 public :
     NewRelease(const NewRelease&) = delete;
     NewRelease& operator=(const NewRelease&) = delete;
-    static NewRelease* getNewReleasePriceCode() {
-        if(!instance) {
-            instance = new NewRelease;
-        }
-        return instance;
-    }
-    double getAmountForDays(int days) {
-        return days * 3;
-    }
-    int getRenterPoints(int days) {
-        if(days > 1) {
-            return 2;
-        }
-        return 1;
-    }
+    static NewRelease* getNewReleasePriceCode();
+    double getAmountForDays(int days) override;
+    int getRenterPoints(int days) override;
 };
 #endif //LAB5_REFACTORING_NEWRELEASE_H

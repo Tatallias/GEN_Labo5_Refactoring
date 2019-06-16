@@ -3,6 +3,7 @@
 #include "Customer.h"
 #include "Childrens.h"
 #include "NewRelease.h"
+#include "Movie.h"
 
 int main() {
 

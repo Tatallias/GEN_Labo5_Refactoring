@@ -25,22 +25,6 @@ string Customer::statement()
         // determine amounts for each line
 
         thisAmount += rental.getMovie().getAmountForDays(rental.getDaysRented());
-        /*
-        switch ( each.getMovie().getPriceCode() ) {
-            case Movie::REGULAR:
-                thisAmount += 2;
-                if ( rental.getDaysRented() > 2 )
-                    thisAmount += ( rental.getDaysRented() - 2 ) * 1.5 ;
-                break;
-            case Movie::NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
-                break;
-            case Movie::CHILDRENS:
-                thisAmount += 1.5;
-                if ( rental.getDaysRented() > 3 )
-                    thisAmount += ( rental.getDaysRented() - 3 ) * 1.5;
-                break;
-        }*/
 
         // add frequent renter points
         frequentRenterPoints += rental.getMovie().getRenterPoints(rental.getDaysRented());
