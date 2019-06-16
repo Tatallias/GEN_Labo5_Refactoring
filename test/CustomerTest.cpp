@@ -1,7 +1,8 @@
 
 #include "gtest/gtest.h"
 #include "../src/Customer.h"
-#include "../src/Movie.h"
+#include "../src/NewRelease.h"
+#include "../src/Childrens.h"
 
 TEST(CustomerTest, constructor) {
    // Code
@@ -13,8 +14,8 @@ TEST(CustomerTest, statement) {
     // code
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid"), 7));
-    customer.addRental( Rental( Movie( "Avengers: Endgame", Movie::NEW_RELEASE ), 5));
-    customer.addRental( Rental( Movie("Snow White", Movie::CHILDRENS), 3 ));
+    customer.addRental( Rental( Movie( "Avengers: Endgame", NewRelease::getNewReleasePriceCode() ), 5));
+    customer.addRental( Rental( Movie("Snow White", Childrens::getChildrensPriceCode()), 3 ));
 
     ASSERT_EQ(customer.statement(), "Rental Record for Olivier\n"
                                     "\tKarate Kid\t9.5\n"

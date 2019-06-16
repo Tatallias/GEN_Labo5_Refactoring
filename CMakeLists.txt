@@ -3,7 +3,14 @@ project(lab5_refactoring)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(lab5 src/main.cpp src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h src/Rental.cpp)
+add_executable(lab5 src/main.cpp
+        src/Customer.cpp src/Customer.h
+        src/Movie.cpp src/Movie.h
+        src/Rental.h src/Rental.cpp
+        src/PriceCode.h
+        src/Childrens.h src/Childrens.cpp
+        src/NewRelease.h src/NewRelease.cpp
+        src/Regular.h src/Regular.cpp)
 
 
 include(DownloadProject.cmake)
@@ -30,6 +37,11 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Trivial example using gtest and gmock
-add_executable(lab5-test src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h src/Rental.cpp test/CustomerTest.cpp test/MovieTest.cpp test/RentalTest.cpp)
+add_executable(lab5-test src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h test/CustomerTest.cpp test/MovieTest.cpp test/RentalTest.cpp
+        src/PriceCode.h
+        src/Rental.cpp
+        src/Childrens.h src/Childrens.cpp
+        src/NewRelease.h src/NewRelease.cpp
+        src/Regular.h src/Regular.cpp)
 
 target_link_libraries(lab5-test gtest gmock_main)

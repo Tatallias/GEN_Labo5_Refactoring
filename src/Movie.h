@@ -2,22 +2,34 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 #include <string>
+#include "PriceCode.h"
+#include "Regular.h"
 
 class Movie {
 public:
-    static const int CHILDRENS   = 2;
-    static const int REGULAR     = 0;
-    static const int NEW_RELEASE = 1;
 
-    explicit Movie(std::string  title, int priceCode = REGULAR );
+    Movie( const std::string& title, PriceCode *priceCode = Regular::getRegularPriceCode() );
 
-    int getPriceCode() const;
-    void setPriceCode( int arg );
+    double getAmountForDays(int days) const;
+    int getRenterPoints(int days) const;
     std::string getTitle() const;
 
 private:
+    PriceCode *_priceCode;
     std::string _title;
-    int _priceCode;
 };
+inline Movie::
+Movie( const std::string& title, PriceCode *priceCode )
+        : _title( title )
+        , _priceCode( priceCode )
+{}
+inline double Movie::getAmountForDays(int days) const {
+    return _priceCode->getAmountForDays(days);
+}
+inline int Movie::getRenterPoints(int days) const {
+    return _priceCode->getRenterPoints(days);
+}
+inline std::string Movie::
+getTitle() const { return _title; }
 
 #endif // MOVIE_H
