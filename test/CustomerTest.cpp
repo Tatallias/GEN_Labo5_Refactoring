@@ -1,6 +1,7 @@
 
 #include "gtest/gtest.h"
 #include "../src/Customer.h"
+#include "../src/Movie.h"
 
 TEST(CustomerTest, constructor) {
    // Code

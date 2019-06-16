@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Customer.h"
+#include "Movie.h"
 
 int main() {
 

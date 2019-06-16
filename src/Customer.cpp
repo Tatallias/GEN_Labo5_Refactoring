@@ -1,7 +1,10 @@
 // Customer.cpp
+#include "Rental.h"
+#include <string>
 #include <sstream>
 #include <vector>
 #include "Customer.h"
+#include "Movie.h"
 
 using std::ostringstream;
 using std::vector;
@@ -53,4 +56,17 @@ string Customer::statement()
     result << "You earned " << frequentRenterPoints
            << " frequent renter points";
     return result.str();
+}
+
+Customer::Customer() {}
+
+Customer::Customer( const string& name )
+        : _name( name ) {}
+
+void Customer::addRental( const Rental& arg ) {
+    _rentals.push_back( arg );
+}
+
+string Customer::getName() const {
+    return _name;
 }
