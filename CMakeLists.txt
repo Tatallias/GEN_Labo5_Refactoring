@@ -3,7 +3,7 @@ project(lab5_refactoring)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(lab5 src/main.cpp src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h)
+add_executable(lab5 src/main.cpp src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h src/Rental.cpp)
 
 
 include(DownloadProject.cmake)
@@ -30,6 +30,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Trivial example using gtest and gmock
-add_executable(lab5-test src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h test/CustomerTest.cpp test/MovieTest.cpp test/RentalTest.cpp)
+add_executable(lab5-test src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie.h src/Rental.h src/Rental.cpp test/CustomerTest.cpp test/MovieTest.cpp test/RentalTest.cpp)
 
 target_link_libraries(lab5-test gtest gmock_main)

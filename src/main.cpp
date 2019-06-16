@@ -2,6 +2,7 @@
 
 #include "Customer.h"
 #include "Movie.h"
+#include "Rental.h"
 
 int main() {
 
