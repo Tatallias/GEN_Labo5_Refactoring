@@ -10,7 +10,7 @@ add_executable(lab5 src/main.cpp
         src/PriceCode.h
         src/Childrens.h src/Childrens.cpp
         src/NewRelease.h src/NewRelease.cpp
-        src/Regular.h src/Regular.cpp)
+        src/Regular.h src/Regular.cpp src/Rentals.cpp src/Rentals.h)
 
 
 include(DownloadProject.cmake)
@@ -42,6 +42,6 @@ add_executable(lab5-test src/Customer.cpp src/Customer.h src/Movie.cpp src/Movie
         src/Rental.cpp
         src/Childrens.h src/Childrens.cpp
         src/NewRelease.h src/NewRelease.cpp
-        src/Regular.h src/Regular.cpp)
+        src/Regular.h src/Regular.cpp src/Rentals.cpp src/Rentals.h)
 
 target_link_libraries(lab5-test gtest gmock_main)

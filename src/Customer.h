@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "Rental.h"
+#include "Rentals.h"
 
 class Customer {
 public:
@@ -16,7 +17,7 @@ public:
 
 private:
     std::string _name;
-    std::vector< Rental > _rentals;
+    Rentals _rentals;
 };
 
 #endif // CUSTOMER_H

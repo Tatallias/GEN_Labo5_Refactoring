@@ -13,46 +13,22 @@ using std::vector;
 
 using namespace std;
 
-string Customer::statement()
-{
-    double totalAmount = 0;
-    int frequentRenterPoints = 0;
+string Customer::statement() {
     ostringstream result;
+
     result << "Rental Record for " << getName() << "\n";
-    for (const Rental& rental: _rentals) {
-        double thisAmount = 0;
+    result << _rentals.getRecord();
 
-        // determine amounts for each line
-
-        thisAmount += rental.getMovie().getAmountForDays(rental.getDaysRented());
-
-        // add frequent renter points
-        frequentRenterPoints += rental.getMovie().getRenterPoints(rental.getDaysRented());
-        /*frequentRenterPoints++;
-        // add bonus for a two day new release rental
-
-        if ( ( each.getMovie().getPriceCode() == Movie::NEW_RELEASE )
-             && each.getDaysRented() > 1 ) frequentRenterPoints++;*/
-
-        // show figures for this rental
-        result << "\t" << rental.getMovie().getTitle() << "\t"
-               << thisAmount << "\n";
-        totalAmount += thisAmount;
-    }
-    // add footer lines
-    result << "Amount owed is " << totalAmount << "\n";
-    result << "You earned " << frequentRenterPoints
-           << " frequent renter points";
     return result.str();
 }
 
-Customer::Customer() {}
+Customer::Customer() = default;
 
 Customer::Customer( string  name )
         : _name(std::move( name )) {}
 
 void Customer::addRental( const Rental& arg ) {
-    _rentals.push_back( arg );
+    _rentals.addRental(arg);
 }
 
 string Customer::getName() const {
