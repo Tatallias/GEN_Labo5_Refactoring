@@ -1,3 +1,5 @@
+#include <utility>
+
 // Customer.cpp
 #include "Rental.h"
 #include <string>
@@ -60,8 +62,8 @@ string Customer::statement()
 
 Customer::Customer() {}
 
-Customer::Customer( const string& name )
-        : _name( name ) {}
+Customer::Customer( string  name )
+        : _name(std::move( name )) {}
 
 void Customer::addRental( const Rental& arg ) {
     _rentals.push_back( arg );

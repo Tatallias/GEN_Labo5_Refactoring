@@ -8,7 +8,7 @@
 class Customer {
 public:
     Customer();
-    explicit Customer( const std::string& name );
+    explicit Customer(std::string name );
 
     void addRental( const Rental& arg );
     std::string getName() const;
